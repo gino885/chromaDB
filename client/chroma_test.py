@@ -4,12 +4,13 @@ import chromadb
 from chromadb.config import Settings
 
 
-host = os.getenv("CHROMA_HOST", "chroma_server")
+host = os.getenv("CHROMA_HOST", "chromadb_server") 
 port = int(os.getenv("CHROMA_PORT", 8000))
+
 #換成你需要的 embedding model
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-chroma_client = chromadb.HttpClient(host='chroma_server', port=8000)
+chroma_client = chromadb.HttpClient(host='chromadb_server', port=8000)
 
 # 檢查連線是否正常（heartbeat）
 print("Heartbeat:", chroma_client.heartbeat())
@@ -30,7 +31,7 @@ alpha_data = [
         "}"
     ),
         "metadata": {
-            "source": "World Quant"
+            "source": "wq101 alpha"
         }
     },
      {
@@ -44,7 +45,7 @@ alpha_data = [
         "}"
     ),
         "metadata": {
-            "source": "World Quant"
+            "source": "wq101 alpha"
         }
     }
 
@@ -55,6 +56,7 @@ ids = [item["id"] for item in alpha_data]
 documents = [item["document"] for item in alpha_data]
 metadatas = [item["metadata"] for item in alpha_data]
 embeddings = model.encode(documents)
+
 # 將資料加入 collection
 collection.add(
     documents=documents,
