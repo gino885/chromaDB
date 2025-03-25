@@ -11,7 +11,9 @@ docker compose up -d
 pip install sentence-transformers chromadb requests
 ```
 
-3. 執行主程式 (寫了最基本會用到板塊，學長有其他需要的 method 可以看這裡: https://docs.trychroma.com/docs/collections/create-get-delete)
+3. 新增 chroma-data 資料夾在根目錄
+
+4. 執行主程式 (寫了最基本會用到板塊，學長有其他需要的 method 可以看這裡: https://docs.trychroma.com/docs/collections/create-get-delete)
 ```bash
 python chroma_test.py
 ```
