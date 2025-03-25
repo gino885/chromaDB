@@ -1,5 +1,6 @@
 # chromaDB
-build chromaDB
+
+colone this repository
 
 1. 啟動 ChromaDB Server（使用 Docker）
 ```bash
